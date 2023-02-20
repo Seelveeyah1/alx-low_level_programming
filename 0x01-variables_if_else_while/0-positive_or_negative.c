@@ -4,7 +4,7 @@ Task 0
 #include <time.h>
 
 /**
-* main - Entry point
+* main - To print out the value of an integar
 *
 * Return: Always 0 (Success)
 */
