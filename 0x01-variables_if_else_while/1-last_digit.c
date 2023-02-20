@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/*
+/**
  * main - Entry point
  * Description: - To determine the last digit of a variable
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
+
 int n, m;
 
 srand(time(0));
