@@ -15,7 +15,7 @@ for (u = 0; u <= 9; u++)
 }
 for (v = 'a'; v <= 'g'; v++)
 {
-	putchar((v % 10) + '0');
+	putchar(v);
 }
 	putchar('\n');
 return (0);
