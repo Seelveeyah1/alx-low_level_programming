@@ -13,7 +13,7 @@ for (u = 0; u <= 9; u++)
 {
 	putchar((u % 10) + '0');
 }
-for (v = 'a'; v <= 'g'; v++)
+for (v = 'a'; v <= 'f'; v++)
 {
 	putchar(v);
 }
