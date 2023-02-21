@@ -8,10 +8,14 @@
 int main(void)
 {
 
-int u;
-for (u = 0; u <= 15; u++)
+int u, v;
+for (u = 0; u <= 9; u++)
 {
-	putchar((u % 16) + '0');
+	putchar((u % 10) + '0');
+}
+for (v = 'a'; v <= 'g'; v++)
+{
+	putchar((v % 10) + '0');
 }
 	putchar('\n');
 return (0);
