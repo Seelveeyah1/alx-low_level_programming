@@ -21,7 +21,7 @@ for (row = 0; row <= 9; row++)
 		{
 		_putchar('0');
 		}
-		else if (i > 10)
+		else if (i < 10)
 		{
 		_putchar(',');
 		_putchar(' ');
