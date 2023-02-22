@@ -35,7 +35,7 @@ int row, column, i, j, k;
 			}
 			else if (n > 15 || n < 0)
 			{
-				break;
+				_putchar();
 			}
 			else
 			{
