@@ -1,11 +1,15 @@
 #include "main.h"
 /**
- * times_table - prints the 9 times table
- * Description: prints the 9 times table
+ * print_times_table - entry point
+ *
+ * Description: function that prints the n times table
+ *
+ * @n: times table to be printed
+ *
  * Return: void
  */
 
-void times_table(void)
+void print_times_table(int n)
 {
 int row, column, i, j, k;
 
