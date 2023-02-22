@@ -1,9 +1,12 @@
 #include "main.h"
 
 /**
- * _abs - to print the absolute value of an integar
- *@b: the integar for which the value is to be printed
- * Return: Returns the absolute value
+ * _abs - entry point
+ *
+ * Description: function that computes the absolute value of an integar
+ *
+ *@b: the integar to compute its absolute value
+ * Return: returns the abs value
  */
 
 int _abs(int b)
