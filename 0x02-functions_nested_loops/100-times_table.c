@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_times_table - entry point
  *
@@ -18,8 +19,8 @@ int row, column, i, j, k;
 		for (column = 0; column <= n; column++)
 		{
 			i = row * column;
-			j = product / 10;
-			k = product % 10;
+			j = i / 10;
+			k = i % 10;
 			if (column == 0)
 			{
 				_putchar('0');
@@ -31,7 +32,7 @@ int row, column, i, j, k;
 				_putchar(' ');
 				_putchar(k + '0');
 			}
-			else if (n > 15 && n < 0)
+			else if (n > 15 || n < 0)
 			{
 				break;
 			}
