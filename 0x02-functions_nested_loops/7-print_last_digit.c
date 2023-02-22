@@ -12,11 +12,11 @@ int print_last_digit(int h)
 {
 int last_digit;
 
-last_digit = h % 10
+last_digit = h % 10;
 
 if (last_digit < 0)
 {
-	last digit = last_digit * -1;
+	last_digit = last_digit * -1;
 }
 else
 {
