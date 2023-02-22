@@ -20,7 +20,7 @@ int row, column, i, j, k;
 			{
 				_putchar('0');
 			}
-			else if (product < 10)
+			else if (i < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
