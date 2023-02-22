@@ -29,7 +29,7 @@ int row, column, i, j, k;
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
+				_putchar(j + '0');
 				_putchar(k + '0');
 			}
 			else if (n > 15 || n < 0)
@@ -39,7 +39,7 @@ int row, column, i, j, k;
 			else
 			{
 				_putchar(',');
-				_putchar(' ');
+				_putchar(i + '0');
 				_putchar(j + '0');
 				_putchar(k + '0');
 			}
