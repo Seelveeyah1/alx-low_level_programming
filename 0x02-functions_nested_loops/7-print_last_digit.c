@@ -14,9 +14,13 @@ int last_digit;
 
 last_digit = h % 10
 
-for (last_digit > 0)
+if (last_digit < 0)
+{
+	last digit = last_digit * -1;
+}
+else
 {
 	_putchar(last_digit + '0');
 }
-	return (last_digit);
+return (last_digit);
 }
