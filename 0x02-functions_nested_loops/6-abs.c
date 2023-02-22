@@ -2,16 +2,23 @@
 
 /**
  * _abs - to print the absolute value of an integar
- *@int: the integar for which the value is to be printed
- * Return: Always 0
+ *@b: the integar for which the value is to be printed
+ * Return: Returns the absolute value
  */
 
-int _abs(int)
+int _abs(int b)
 {
 
-	int r;
-
-	r = _abs(9);
-	_putchar('9');
-return (0);
+if (b < 0)
+{
+	return (b);
+}
+else if (b > 0)
+{
+	return (-b);
+}
+else
+{
+	return (b);
+}
 }
