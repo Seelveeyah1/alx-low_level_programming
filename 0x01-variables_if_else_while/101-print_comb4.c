@@ -23,10 +23,7 @@ int i, j, k;
 			}
 		}
 	}
-	if (i == 7, j == 8, k == 9)
-{
 	putchar('\n');
-}
 
 	return (0);
 }
