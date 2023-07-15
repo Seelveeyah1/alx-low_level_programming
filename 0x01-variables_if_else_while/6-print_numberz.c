@@ -7,18 +7,14 @@
  */
 int main(void)
 {
-	putchar('0' + 0);
-	putchar('0' + 1);
-	putchar('0' + 2);
-	putchar('0' + 3);
-	putchar('0' + 4);
-	putchar('0' + 5);
-	putchar('0' + 6);
-	putchar('0' + 7);
-	putchar('0' + 8);
-	putchar('0' + 9);
+	int number;
 
-	putchar('\n'); /* Print a new line */
+	for (number = 0; number < 10; number++)
+	{
+		putchar(number * 1 + '0');
+	}
+
+	putchar('\n');
 
 	return (0);
 }
