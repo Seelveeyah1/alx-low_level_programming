@@ -1,56 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-
+#include <ctype.h>
 /**
- * is_positive_digit - Check if a string contains only
- * positive digits
- * @str: String to check
- * Return: true if all characters are digits, false
- * otherwise
+ * main - adds positive numbers.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
-
-bool is_positive_digit(const char *str)
-{
-	while (*str)
-	{
-		if (*str < '0' || *str > '9')
-			return (false);
-		str++;
-	}
-	return (true);
-}
-
-/**
- * main - Entry point of the program
- * @argc: Number of command-line arguments
- * @argv: Array of command-line argument strings
- * Return: 0 on success, 1 on error
- */
-
 int main(int argc, char *argv[])
 {
-	int sum = 0;
+	int i, j, add = 0;
 
-	if (argc < 2)
+	for (i = 1; i < argc; i++)
 	{
-		printf("0\n");
-		return (0);
-	}
-
-	for (int i = 1; i < argc; i++)
-	{
-		if (is_positive_digit(argv[i]))
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			sum += atoi(argv[i]);
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		add += atoi(argv[i]);
 	}
-
-	printf("%d\n", sum);
+	printf("%d\n", add);
 	return (0);
 }
