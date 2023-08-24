@@ -4,17 +4,15 @@
 #include "lists.h"
 
 /**
- * add_node_end - Adds a new node at the end of a list_t
- * list.
- * @head: Pointer to the address of the head of the list.
+ * create_node - Creates a new list node.
  * @str: String to be added to the new node.
  *
- * Return: The address of the new element (node), or NULL
- * if it failed.
+ * Return: The address of the new node, or NULL if it
+ * failed.
  */
-list_t *add_node_end(list_t **head, const char *str)
+list_t *create_node(const char *str)
 {
-	list_t *new_node, *temp;
+	list_t *new_node;
 	char *str_copy;
 	size_t str_len;
 
@@ -41,6 +39,28 @@ list_t *add_node_end(list_t **head, const char *str)
 	new_node->len = str_len;
 	new_node->next = NULL;
 
+	return (new_node);
+}
+
+/**
+ * add_node_end - Adds a new node at the end of a list_t
+ * list.
+ * @head: Pointer to the address of the head of the list.
+ * @str: String to be added to the new node.
+ *
+ * Return: The address of the new element (node), or NULL
+ * if it failed.
+ */
+list_t *add_node_end(list_t **head, const char *str)
+{
+	list_t *new_node, *temp;
+
+	new_node = create_node(str);
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
+
 	if (*head == NULL)
 	{
 		*head = new_node;
@@ -56,4 +76,4 @@ list_t *add_node_end(list_t **head, const char *str)
 	temp->next = new_node;
 
 	return (new_node);
-}	
+}
