@@ -5,6 +5,8 @@
  * free_listint2 - Frees a listint_t list and sets the
  * head to NULL.
  * @head: Pointer to the address of the head of the list.
+ *
+ * Return: Always 0.
  */
 void free_listint2(listint_t **head)
 {
@@ -17,5 +19,7 @@ void free_listint2(listint_t **head)
 		free(temp);
 	}
 
-	*head = NULL; /* Set the head to NULL after freeing all nodes */
+	*head = NULL;
+
+	return (0);
 }
