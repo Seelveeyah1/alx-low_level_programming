@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include "lists.h"
 
 /**
@@ -10,29 +11,22 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow, *fast;
+	const listint_t *current = head;
 	size_t count = 0;
+	int visited[10000] = {0};
 
-	slow = head;
-	fast = head;
-
-	while (slow && fast && fast->next)
+	while (current != NULL);
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-
-	if (slow == fast)  /* Detect a loop */
+	if (visited[(size_t)current])
 	{
-		printf("-> [%p] %d\n", (void *)slow, slow->n);
-		exit(98);  /* Exit with status 98 if the function fails */
-	}
+		printf("-> [%p] %d\n", (void *)current, current->n);
+		exit(98);
 	}
 
-	while (head != NULL)
-	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		count++;
-		head = head->next;
+	printf("[%p] %d\n", (void *)current, current->n);
+	visited[(size_t)current] = 1;
+	count++;
+	current = current->next;
 	}
 
 	return (count);
