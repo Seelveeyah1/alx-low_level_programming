@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include "lists.h"
 
 /**
@@ -11,22 +10,29 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current = head;
+	const listint_t *slow, *fast;
 	size_t count = 0;
-	int visited[10000] = {0};
 
-	while (current != NULL);
+	slow = head;
+	fast = head;
+
+	while (slow && fast && fast->next)
 	{
-	if (visited[(size_t)current])
+		slow = slow->next;
+		fast = fast->next->next;
+
+	if (slow == fast)
 	{
-		printf("-> [%p] %d\n", (void *)current, current->n);
+		printf("-> [%p] %d\n", (void *)slow, slow->n);
 		exit(98);
 	}
+	}
 
-	printf("[%p] %d\n", (void *)current, current->n);
-	visited[(size_t)current] = 1;
-	count++;
-	current = current->next;
+	while (head != NULL)
+	{
+		printf("[%p] %d\n", (void *)head, head->n);
+		count++;
+		head = head->next;
 	}
 
 	return (count);
