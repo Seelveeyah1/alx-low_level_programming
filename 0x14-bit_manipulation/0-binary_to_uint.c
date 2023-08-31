@@ -8,21 +8,29 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int result = 0;
-
 	if (b == NULL)
 	{
 		return (0);
 	}
 
-	for (; *b; b++)
+	unsigned int result = 0;
+	unsigned int base = 1;
+	int length = 0;
+	int i;
+
+	while (b[length])
 	{
-		if (*b != '0' && *b != '1')
+		if (b[length] != '0' && b[length] != '1')
 		{
 			return (0);
 		}
+		length++;
+	}
 
-		result = result * 2 + (*b - '0');
+	for (i = length - 1; i >= 0; i--)
+	{
+		result += (b[i] - '0') * base;
+		base *= 2;
 	}
 
 	return (result);
