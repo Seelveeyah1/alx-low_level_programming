@@ -14,23 +14,16 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	unsigned int result = 0;
-	unsigned int base = 1;
-	int length = 0;
-	int i;
 
-	while (b[length])
+	while (*b)
 	{
-		if (b[length] != '0' && b[length] != '1')
+		if (*b != '0' && *b != '1')
 		{
 			return (0);
 		}
-		length++;
-	}
 
-	for (i = length - 1; i >= 0; i--)
-	{
-		result += (b[i] - '0') * base;
-		base *= 2;
+		result = result * 2 + (*b - '0');
+		b++;
 	}
 
 	return (result);
